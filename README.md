@@ -1,60 +1,57 @@
-# Temporary1
-
-#include <stdio.h>
-
-int main() {
-    int n = 0;
-
-    printf("ENTER SIZE OF ARRAY: ");
-    scanf("%d", &n);
-
-    int arr[n];
-    int arrc[n];
-
-    printf("ENTER %d ELEMENTS: ", n);
-
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    // Copy elements to arrc
-    for (int i = 0; i < n; i++) {
-        arrc[i] = arr[i];
-    }
-
-    // Sort arrc using bubble sort
-    int temp = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; j++) {
-            if (arrc[i] > arrc[j]) {
-                temp = arrc[i];
-                arrc[i] = arrc[j];
-                arrc[j] = temp;
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-    }
-
-    // Create a visited array to track which sorted indices are already used
-    int visited[n]; 
-    for (int i = 0; i < n; i++) {
-        visited[i] = 0;  // Initialize all as not visited
-    }
-
-    // Iterate original array and find its index in sorted array (arrc)
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (arr[i] == arrc[j] && visited[j] == 0) {  // Check if not visited
-                arr[i] = j;  // Assign the index
-                visited[j] = 1;  // Mark this index as visited
-                break;
-            }
+        nav {
+            background-color: #333;
+            overflow: hidden;
         }
-    }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <span id="authOption"></span>
+    </nav>
 
-    // Print the result
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
+    <div class="container">
+        <h1>This is the Home Page</h1>
+    </div>
 
-    return 0;
-}
+    <script>
+        // Check if user is logged in
+        window.onload = function() {
+            const authOption = document.getElementById("authOption");
+            const isLoggedIn = localStorage.getItem("loggedIn");
+
+            if (isLoggedIn === "true") {
+                authOption.innerHTML = '<a href="logout.html">Logout</a>';
+            } else {
+                authOption.innerHTML = '<a href="login.html">Login</a> | <a href="signup.html">Signup</a>';
+            }
+        };
+    </script>
+</body>
+</html>
