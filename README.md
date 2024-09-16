@@ -1,57 +1,72 @@
+gejen
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-        }
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            margin-top: 50px;
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="home.html">Home</a>
-        <span id="authOption"></span>
-    </nav>
-
-    <div class="container">
-        <h1>This is the Home Page</h1>
-    </div>
+    <h1>Login Page</h1>
+    <div id="loginMessage"></div>
 
     <script>
-        // Check if user is logged in
-        window.onload = function() {
-            const authOption = document.getElementById("authOption");
-            const isLoggedIn = localStorage.getItem("loggedIn");
-
-            if (isLoggedIn === "true") {
-                authOption.innerHTML = '<a href="logout.html">Logout</a>';
-            } else {
-                authOption.innerHTML = '<a href="login.html">Login</a> | <a href="signup.html">Signup</a>';
-            }
-        };
+        // Simulate login by storing in localStorage
+        localStorage.setItem("loggedIn", "true");
+        document.getElementById("loginMessage").innerHTML = "<h2>Successfully logged in</h2>";
+        
+        // Redirect to home after 2 seconds
+        setTimeout(function() {
+            window.location.href = "home.html";
+        }, 2000);
     </script>
 </body>
 </html>
+
+
+
+
+
+
+logout
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logout Page</h1>
+    <div id="logoutMessage"></div>
+
+    <script>
+        // Simulate logout by removing login status from localStorage
+        localStorage.setItem("loggedIn", "false");
+        document.getElementById("logoutMessage").innerHTML = "<h2>Successfully logged out</h2>";
+
+        // Redirect to home after 2 seconds
+        setTimeout(function() {
+            window.location.href = "home.html";
+        }, 2000);
+    </script>
+</body>
+</html>
+
+
+
