@@ -9,3 +9,14 @@ To support my career growth, I would need guidance from my team leader and suppo
 I would appreciate opportunities to practice public speaking, such as presenting in team meetings or leading small discussions. To develop my leadership skills, shadowing a team lead or being given responsibility for small projects would help me transition from a team player to a leader.
 
 My team lead would play a key role in providing mentorship, while I would take the initiative to seek learning opportunities and ask for more responsibilities as I grow. This support will help me thrive in my current role and prepare for future opportunities.
+
+
+
+In addition to the immediate support outlined, it’s important to consider my long-term career goals and any special requests I may have. Over time, I aim to transition into a data analyst role, so aligning my current learning opportunities with this goal would be beneficial. This might include working on data-related projects or collaborating with teams that focus on data analysis.
+
+I would also appreciate any feedback on my progress in both technical and soft skills, as it will help me stay on track and make necessary adjustments. It would be valuable to have regular check-ins with my manager to discuss my career development and adjust goals as needed.
+
+Furthermore, if there are opportunities for me to participate in cross-functional teams or take on temporary leadership roles, these experiences would be instrumental in preparing me for future leadership positions. Overall, having clear milestones and continuous support will be crucial in achieving both my current and long-term career objectives.
+
+
+In addition to immediate support, it's crucial to focus on my long-term goal of moving into a data analyst role. To support this, I would benefit from working on data-related projects or collaborating with teams that handle data analysis. Regular feedback on my technical and soft skills will be important to ensure I’m making progress and addressing any areas that need improvement.
