@@ -1,1 +1,1 @@
-At [Your Restaurant Name], we serve food and drinks crafted for the modern coder. Whether you're grabbing a quick bite or fueling up for a long day of innovation, we've got your back. Step into a space where tech meets taste, and every meal powers your day!"
+Rustic Chicken Curry & Ragi Delight features tender chicken in a flavorful curry, served with healthy Ragi Delight made from finger millet. This hearty dish is perfect for sharing and goodness, offering a mix of delicious taste and good nutrition.
