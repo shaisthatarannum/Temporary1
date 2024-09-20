@@ -1,1 +1,2 @@
-
+As a fresher, I am eager to develop my skills in the quality assurance and automated testing domain. My manager has suggested that I familiarize myself with tools like Selenium and gain a strong understanding of agile software testing practices. I am committed to learning these new technologies and methodologies to enhance my performance in this role. Additionally, I am open to exploring other areas within the field to further expand my knowledge and grow professionally.
+My manager has advised that I become familiar with tools like Selenium and gain knowledge in agile software testing methodologies. I’m focused on building a strong foundation in these areas to excel in my current role.
