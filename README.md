@@ -1,3 +1,5 @@
+
+
 Here’s a basic implementation of the requirements for the ReactJS coding test:
 
 ### 3. **App Component Code**
@@ -225,3 +227,79 @@ export default Calculator;
 - **Bootstrap** provides a quick way to add pre-built, responsive styles (buttons, inputs, margins, etc.).
 
 Either approach works well, depending on your design preference. For a more modern and faster approach, you might prefer **Bootstrap**.
+
+
+
+Yes, you can implement the calculator using promises and `setState`, but there are a few corrections needed in your code to make it work correctly in React. Here's how you can implement it:
+
+1. **Correcting `onChangeHandler` and using Promises for state updates.**
+2. **Properly binding `this` in the class component (if using class components).**
+3. **Correcting syntax errors like missing parentheses in the `render()` method.**
+
+Here’s the corrected version of your calculator using promises:
+
+### **Class Component Approach with `setState` and Promises:**
+
+```jsx
+import React, { Component } from 'react';
+
+class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      no1: 0,
+      no2: 0,
+      sum: 0
+    };
+    this.onChangeHandler = this.onChangeHandler.bind(this);
+  }
+
+  onChangeHandler(e) {
+    // Get the value of the input and update the corresponding state
+    const { id, value } = e.target;
+
+    Promise.resolve()
+      .then(() => this.setState({ [id]: value }))
+      .then(() => this.setState({ sum: parseInt(this.state.no1) + parseInt(this.state.no2) }));
+  }
+
+  render() {
+    return (
+      <div>
+        {/* Display the current state as JSON */}
+        {JSON.stringify(this.state)}
+        <br />
+        Number 1: <input type="number" id="no1" className="form-control" onChange={this.onChangeHandler} />
+        <br />
+        Number 2: <input type="number" id="no2" className="form-control" onChange={this.onChangeHandler} />
+        <br />
+        <input type="button" className="btn btn-primary" id="btnAdd" value="Add" />
+        <br />
+        <h3>Sum: {this.state.sum}</h3>
+      </div>
+    );
+  }
+}
+
+export default Calculator;
+```
+
+### Key Points:
+1. **`onChangeHandler`**:
+   - This function handles the input changes and updates the state for `no1` and `no2`.
+   - Using promises, it first updates the respective input value in the state and then calculates the sum using the updated state values.
+   
+2. **State Management**:
+   - `setState` is asynchronous, so promises are used to ensure that after updating `no1` or `no2`, the sum calculation happens with the most up-to-date values.
+
+3. **`render()` Method**:
+   - The `JSON.stringify(this.state)` displays the current state object for debugging.
+   - The result (sum) is displayed below the input fields after both numbers are entered.
+
+### Additional Changes:
+- **Corrected the use of `onChange` instead of `onkeyup`**, as `onChange` is more common in React for handling form inputs.
+- **Proper binding of `this`** in the constructor, necessary when using class components.
+  
+You can add the Subtract and Multiply buttons similarly, modifying the `onChangeHandler` to handle those operations as well or create new methods for subtraction and multiplication.
+
+Let me know if you'd like further modifications!
