@@ -1,86 +1,87 @@
-// src/components/Login.js
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
+Here’s a basic implementation of the requirements for the ReactJS coding test:
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [numPersons, setNumPersons] = useState('');
-  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-  const [error, setError] = useState('');
+### 3. **App Component Code**
 
-  const navigate = useNavigate();
+```jsx
+import React, { useState } from 'react';
+import Calculator from './Calculator';
 
-  useEffect(() => {
-    // Enable button only if all fields are filled
-    setIsButtonEnabled(username && phoneNumber && numPersons);
-  }, [username, phoneNumber, numPersons]);
+function App() {
+  const [showCalculator, setShowCalculator] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Redirect to the payment success page
-      navigate('/payment-success');
-    }
+  return (
+    <div>
+      <button onClick={() => setShowCalculator(!showCalculator)}>
+        Calculator
+      </button>
+      {showCalculator && <Calculator />}
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 4. **Calculator Component Code**
+
+```jsx
+import React, { useState } from 'react';
+
+function Calculator() {
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
+  const [result, setResult] = useState(null);
+
+  const handleAdd = () => {
+    setResult(parseFloat(num1) + parseFloat(num2));
   };
 
-  const validateForm = () => {
-    if (!username || !phoneNumber || !numPersons) {
-      setError('Please fill in all fields.');
-      return false;
-    }
-    if (!/^\d{10}$/.test(phoneNumber)) {
-      setError('Please enter a valid 10-digit phone number.');
-      return false;
-    }
-    if (isNaN(numPersons) || numPersons <= 0) {
-      setError('Please enter a valid number of persons.');
-      return false;
-    }
-    setError('');
-    return true;
+  const handleSubtract = () => {
+    setResult(parseFloat(num1) - parseFloat(num2));
+  };
+
+  const handleMultiply = () => {
+    setResult(parseFloat(num1) * parseFloat(num2));
   };
 
   return (
-    <div className="login-container">
-      <h2>Restaurant Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter your username"
-          />
-        </div>
-        <div className="form-group">
-          <label>Phone Number:</label>
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            placeholder="Enter your phone number"
-          />
-        </div>
-        <div className="form-group">
-          <label>Number of Persons:</label>
-          <input
-            type="number"
-            value={numPersons}
-            onChange={(e) => setNumPersons(e.target.value)}
-            placeholder="Enter number of persons"
-            min="1"
-          />
-        </div>
-        {error && <p className="error-message">{error}</p>}
-        <button type="submit" disabled={!isButtonEnabled}>
-          Proceed to Payment
-        </button>
-      </form>
+    <div>
+      <input
+        type="number"
+        placeholder="Enter first number"
+        value={num1}
+        onChange={(e) => setNum1(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Enter second number"
+        value={num2}
+        onChange={(e) => setNum2(e.target.value)}
+      />
+
+      <div>
+        <button onClick={handleAdd}>Add</button>
+        <button onClick={handleSubtract}>Subtract</button>
+        <button onClick={handleMultiply}>Multiply</button>
+      </div>
+
+      {result !== null && <h3>Result: {result}</h3>}
     </div>
   );
-};
+}
 
-export default Login;
+export default Calculator;
+```
+
+### Explanation:
+
+1. **App Component**:
+   - Contains a button labeled "Calculator".
+   - When the button is clicked, it toggles the visibility of the `Calculator` component.
+   
+2. **Calculator Component**:
+   - Accepts two numbers through input boxes.
+   - Has buttons to perform addition, subtraction, and multiplication.
+   - Displays the result below the buttons when any operation is clicked.
+
+Let me know if you'd like any further modifications or explanations!
